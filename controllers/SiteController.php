@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Cars;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -61,7 +62,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $cars = Cars::find()->all();
+
+        return $this->render('index', [
+            'cars' => $cars
+        ]);
+    }
+
+    public function actionInStore()
+    {
+        $cars = Cars::find()->where(['isHave' => 1])->all();
+
+        return $this->render('in-store', [
+            'cars' => $cars
+        ]);
     }
 
     /**

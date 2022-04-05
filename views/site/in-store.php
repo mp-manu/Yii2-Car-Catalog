@@ -2,10 +2,10 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Каталог';
+$this->title = 'Авто в наличии';
 ?>
 <div class="site-index">
-    <h3>Каталог</h3>
+    <h3>Авто в наличии</h3>
     <div class="body-content">
         <?php if (count($cars) > 0): ?>
             <div class="row">
